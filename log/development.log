@@ -1,0 +1,1425 @@
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180327153303)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180327153303)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180327153303)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180327153303)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "last_name" varchar, "email" varchar, "phone" varchar, "password" varchar, "adress" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180327153303"]]
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePlaces (20180327153628)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePlaces (20180327153628)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "places" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "address" varchar, "capacity" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180327153628"]]
+  [1m[35m (58.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateEvents (20180327154159)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEvents (20180327154159)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "start_date" datetime, "places" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180327154159"]]
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTickets (20180327154834)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar, "price" integer, "event" varchar, "type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180327154834"]]
+  [1m[35m (14.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTransactions (20180327155335)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTransactions (20180327155335)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "users" varchar, "event" varchar, "dateoftransaction" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (4.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180327155335"]]
+  [1m[35m (31.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-27 17:09:01.024545"], ["updated_at", "2018-03-27 17:09:01.024545"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan"], ["created_at", "2018-03-27 17:09:34.530678"], ["updated_at", "2018-03-27 17:09:34.530678"]]
+  [1m[35m (13.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Valdivieso"], ["created_at", "2018-03-27 17:09:34.546379"], ["updated_at", "2018-03-27 17:09:34.546379"]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javal@miuandes.cl"], ["created_at", "2018-03-27 17:09:34.559316"], ["updated_at", "2018-03-27 17:09:34.559316"]]
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7474747483"], ["created_at", "2018-03-27 17:09:34.571715"], ["updated_at", "2018-03-27 17:09:34.571715"]]
+  [1m[35m (17.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lala"], ["created_at", "2018-03-27 17:09:34.595540"], ["updated_at", "2018-03-27 17:09:34.595540"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojoii 2090"], ["created_at", "2018-03-27 17:09:34.605091"], ["updated_at", "2018-03-27 17:09:34.605091"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan Manuel"], ["created_at", "2018-03-27 17:09:34.613759"], ["updated_at", "2018-03-27 17:09:34.613759"]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Campos"], ["created_at", "2018-03-27 17:09:34.623900"], ["updated_at", "2018-03-27 17:09:34.623900"]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javaaaweel@miuandes.cl"], ["created_at", "2018-03-27 17:09:34.661832"], ["updated_at", "2018-03-27 17:09:34.661832"]]
+  [1m[35m (16.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7472147483"], ["created_at", "2018-03-27 17:09:34.680680"], ["updated_at", "2018-03-27 17:09:34.680680"]]
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.3ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lalasa"], ["created_at", "2018-03-27 17:09:34.694473"], ["updated_at", "2018-03-27 17:09:34.694473"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojc 2090"], ["created_at", "2018-03-27 17:09:34.707241"], ["updated_at", "2018-03-27 17:09:34.707241"]]
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juana Manuela"], ["created_at", "2018-03-27 17:09:34.717208"], ["updated_at", "2018-03-27 17:09:34.717208"]]
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Camposa"], ["created_at", "2018-03-27 17:09:34.726165"], ["updated_at", "2018-03-27 17:09:34.726165"]]
+  [1m[35m (17.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "jweel@miuandes.cl"], ["created_at", "2018-03-27 17:09:34.744468"], ["updated_at", "2018-03-27 17:09:34.744468"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "767483"], ["created_at", "2018-03-27 17:09:34.752550"], ["updated_at", "2018-03-27 17:09:34.752550"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lasdasdlasa"], ["created_at", "2018-03-27 17:09:34.760653"], ["updated_at", "2018-03-27 17:09:34.760653"]]
+  [1m[35m (20.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojca334 2090"], ["created_at", "2018-03-27 17:09:34.787690"], ["updated_at", "2018-03-27 17:09:34.787690"]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicol"], ["created_at", "2018-03-27 17:09:34.799002"], ["updated_at", "2018-03-27 17:09:34.799002"]]
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Soto"], ["created_at", "2018-03-27 17:09:34.811755"], ["updated_at", "2018-03-27 17:09:34.811755"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qloco@miuandes.cl"], ["created_at", "2018-03-27 17:09:34.829947"], ["updated_at", "2018-03-27 17:09:34.829947"]]
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "76711483"], ["created_at", "2018-03-27 17:09:34.845237"], ["updated_at", "2018-03-27 17:09:34.845237"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "la"], ["created_at", "2018-03-27 17:09:34.853514"], ["updated_at", "2018-03-27 17:09:34.853514"]]
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapa 2090"], ["created_at", "2018-03-27 17:09:34.862530"], ["updated_at", "2018-03-27 17:09:34.862530"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicola"], ["created_at", "2018-03-27 17:09:34.870626"], ["updated_at", "2018-03-27 17:09:34.870626"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Sotta"], ["created_at", "2018-03-27 17:09:34.877582"], ["updated_at", "2018-03-27 17:09:34.877582"]]
+  [1m[35m (26.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qlocqqo@miuandes.cl"], ["created_at", "2018-03-27 17:09:34.905074"], ["updated_at", "2018-03-27 17:09:34.905074"]]
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "723346711483"], ["created_at", "2018-03-27 17:09:34.922934"], ["updated_at", "2018-03-27 17:09:34.922934"]]
+  [1m[35m (10.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "ladddd"], ["created_at", "2018-03-27 17:09:34.942744"], ["updated_at", "2018-03-27 17:09:34.942744"]]
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapsrsa 2090"], ["created_at", "2018-03-27 17:09:34.952241"], ["updated_at", "2018-03-27 17:09:34.952241"]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "events" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "bad bunny"], ["created_at", "2018-03-27 17:09:34.981027"], ["updated_at", "2018-03-27 17:09:34.981027"]]
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "events" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Trap sucio"], ["created_at", "2018-03-27 17:09:34.996406"], ["updated_at", "2018-03-27 17:09:34.996406"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("start_date", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["start_date", "2019-08-08 00:00:00"], ["created_at", "2018-03-27 17:09:35.005016"], ["updated_at", "2018-03-27 17:09:35.005016"]]
+  [1m[35m (11.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan"], ["created_at", "2018-03-27 17:12:50.305636"], ["updated_at", "2018-03-27 17:12:50.305636"]]
+  [1m[35m (54.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Valdivieso"], ["created_at", "2018-03-27 17:12:50.364398"], ["updated_at", "2018-03-27 17:12:50.364398"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javal@miuandes.cl"], ["created_at", "2018-03-27 17:12:50.372997"], ["updated_at", "2018-03-27 17:12:50.372997"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7474747483"], ["created_at", "2018-03-27 17:12:50.380486"], ["updated_at", "2018-03-27 17:12:50.380486"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lala"], ["created_at", "2018-03-27 17:12:50.388849"], ["updated_at", "2018-03-27 17:12:50.388849"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojoii 2090"], ["created_at", "2018-03-27 17:12:50.397021"], ["updated_at", "2018-03-27 17:12:50.397021"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan Manuel"], ["created_at", "2018-03-27 17:12:50.404779"], ["updated_at", "2018-03-27 17:12:50.404779"]]
+  [1m[35m (9.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Campos"], ["created_at", "2018-03-27 17:12:50.416203"], ["updated_at", "2018-03-27 17:12:50.416203"]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javaaaweel@miuandes.cl"], ["created_at", "2018-03-27 17:12:50.430018"], ["updated_at", "2018-03-27 17:12:50.430018"]]
+  [1m[35m (22.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7472147483"], ["created_at", "2018-03-27 17:12:50.454883"], ["updated_at", "2018-03-27 17:12:50.454883"]]
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lalasa"], ["created_at", "2018-03-27 17:12:50.468388"], ["updated_at", "2018-03-27 17:12:50.468388"]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojc 2090"], ["created_at", "2018-03-27 17:12:50.485802"], ["updated_at", "2018-03-27 17:12:50.485802"]]
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juana Manuela"], ["created_at", "2018-03-27 17:12:50.496600"], ["updated_at", "2018-03-27 17:12:50.496600"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Camposa"], ["created_at", "2018-03-27 17:12:50.505165"], ["updated_at", "2018-03-27 17:12:50.505165"]]
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "jweel@miuandes.cl"], ["created_at", "2018-03-27 17:12:50.516323"], ["updated_at", "2018-03-27 17:12:50.516323"]]
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "767483"], ["created_at", "2018-03-27 17:12:50.531152"], ["updated_at", "2018-03-27 17:12:50.531152"]]
+  [1m[35m (40.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lasdasdlasa"], ["created_at", "2018-03-27 17:12:50.574875"], ["updated_at", "2018-03-27 17:12:50.574875"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojca334 2090"], ["created_at", "2018-03-27 17:12:50.584345"], ["updated_at", "2018-03-27 17:12:50.584345"]]
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicol"], ["created_at", "2018-03-27 17:12:50.593474"], ["updated_at", "2018-03-27 17:12:50.593474"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Soto"], ["created_at", "2018-03-27 17:12:50.614103"], ["updated_at", "2018-03-27 17:12:50.614103"]]
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qloco@miuandes.cl"], ["created_at", "2018-03-27 17:12:50.625725"], ["updated_at", "2018-03-27 17:12:50.625725"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "76711483"], ["created_at", "2018-03-27 17:12:50.635345"], ["updated_at", "2018-03-27 17:12:50.635345"]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "la"], ["created_at", "2018-03-27 17:12:50.645401"], ["updated_at", "2018-03-27 17:12:50.645401"]]
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapa 2090"], ["created_at", "2018-03-27 17:12:50.654706"], ["updated_at", "2018-03-27 17:12:50.654706"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicola"], ["created_at", "2018-03-27 17:12:50.662557"], ["updated_at", "2018-03-27 17:12:50.662557"]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Sotta"], ["created_at", "2018-03-27 17:12:50.671385"], ["updated_at", "2018-03-27 17:12:50.671385"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qlocqqo@miuandes.cl"], ["created_at", "2018-03-27 17:12:50.679834"], ["updated_at", "2018-03-27 17:12:50.679834"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "723346711483"], ["created_at", "2018-03-27 17:12:50.687014"], ["updated_at", "2018-03-27 17:12:50.687014"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "ladddd"], ["created_at", "2018-03-27 17:12:50.694430"], ["updated_at", "2018-03-27 17:12:50.694430"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapsrsa 2090"], ["created_at", "2018-03-27 17:12:50.702014"], ["updated_at", "2018-03-27 17:12:50.702014"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mandio"], ["created_at", "2018-03-27 17:12:50.720214"], ["updated_at", "2018-03-27 17:12:50.720214"]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "asdassa"], ["created_at", "2018-03-27 17:12:50.730696"], ["updated_at", "2018-03-27 17:12:50.730696"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 101000], ["created_at", "2018-03-27 17:12:50.771847"], ["updated_at", "2018-03-27 17:12:50.771847"]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mencillo"], ["created_at", "2018-03-27 17:12:50.778979"], ["updated_at", "2018-03-27 17:12:50.778979"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "asdassssa"], ["created_at", "2018-03-27 17:12:50.787874"], ["updated_at", "2018-03-27 17:12:50.787874"]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 30000], ["created_at", "2018-03-27 17:12:50.794885"], ["updated_at", "2018-03-27 17:12:50.794885"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mandioma"], ["created_at", "2018-03-27 17:12:50.802292"], ["updated_at", "2018-03-27 17:12:50.802292"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "aassa"], ["created_at", "2018-03-27 17:12:50.810366"], ["updated_at", "2018-03-27 17:12:50.810366"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 100020], ["created_at", "2018-03-27 17:12:50.817783"], ["updated_at", "2018-03-27 17:12:50.817783"]]
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "bad bunny"], ["created_at", "2018-03-27 17:12:50.863840"], ["updated_at", "2018-03-27 17:12:50.863840"]]
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Trap sucio"], ["created_at", "2018-03-27 17:12:50.877139"], ["updated_at", "2018-03-27 17:12:50.877139"]]
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("start_date", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["start_date", "2019-08-08 00:00:00"], ["created_at", "2018-03-27 17:12:50.887978"], ["updated_at", "2018-03-27 17:12:50.887978"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan"], ["created_at", "2018-03-27 17:13:56.120894"], ["updated_at", "2018-03-27 17:13:56.120894"]]
+  [1m[35m (14.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Valdivieso"], ["created_at", "2018-03-27 17:13:56.137163"], ["updated_at", "2018-03-27 17:13:56.137163"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javal@miuandes.cl"], ["created_at", "2018-03-27 17:13:56.144633"], ["updated_at", "2018-03-27 17:13:56.144633"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7474747483"], ["created_at", "2018-03-27 17:13:56.152127"], ["updated_at", "2018-03-27 17:13:56.152127"]]
+  [1m[35m (13.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lala"], ["created_at", "2018-03-27 17:13:56.167783"], ["updated_at", "2018-03-27 17:13:56.167783"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojoii 2090"], ["created_at", "2018-03-27 17:13:56.175274"], ["updated_at", "2018-03-27 17:13:56.175274"]]
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan Manuel"], ["created_at", "2018-03-27 17:13:56.185304"], ["updated_at", "2018-03-27 17:13:56.185304"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Campos"], ["created_at", "2018-03-27 17:13:56.196354"], ["updated_at", "2018-03-27 17:13:56.196354"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javaaaweel@miuandes.cl"], ["created_at", "2018-03-27 17:13:56.205055"], ["updated_at", "2018-03-27 17:13:56.205055"]]
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7472147483"], ["created_at", "2018-03-27 17:13:56.214400"], ["updated_at", "2018-03-27 17:13:56.214400"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lalasa"], ["created_at", "2018-03-27 17:13:56.221769"], ["updated_at", "2018-03-27 17:13:56.221769"]]
+  [1m[35m (26.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojc 2090"], ["created_at", "2018-03-27 17:13:56.250026"], ["updated_at", "2018-03-27 17:13:56.250026"]]
+  [1m[35m (14.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juana Manuela"], ["created_at", "2018-03-27 17:13:56.266877"], ["updated_at", "2018-03-27 17:13:56.266877"]]
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Camposa"], ["created_at", "2018-03-27 17:13:56.276650"], ["updated_at", "2018-03-27 17:13:56.276650"]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "jweel@miuandes.cl"], ["created_at", "2018-03-27 17:13:56.287206"], ["updated_at", "2018-03-27 17:13:56.287206"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "767483"], ["created_at", "2018-03-27 17:13:56.295858"], ["updated_at", "2018-03-27 17:13:56.295858"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lasdasdlasa"], ["created_at", "2018-03-27 17:13:56.303502"], ["updated_at", "2018-03-27 17:13:56.303502"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojca334 2090"], ["created_at", "2018-03-27 17:13:56.312557"], ["updated_at", "2018-03-27 17:13:56.312557"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicol"], ["created_at", "2018-03-27 17:13:56.320155"], ["updated_at", "2018-03-27 17:13:56.320155"]]
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Soto"], ["created_at", "2018-03-27 17:13:56.329577"], ["updated_at", "2018-03-27 17:13:56.329577"]]
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qloco@miuandes.cl"], ["created_at", "2018-03-27 17:13:56.338789"], ["updated_at", "2018-03-27 17:13:56.338789"]]
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "76711483"], ["created_at", "2018-03-27 17:13:56.349869"], ["updated_at", "2018-03-27 17:13:56.349869"]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "la"], ["created_at", "2018-03-27 17:13:56.359107"], ["updated_at", "2018-03-27 17:13:56.359107"]]
+  [1m[35m (11.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapa 2090"], ["created_at", "2018-03-27 17:13:56.374490"], ["updated_at", "2018-03-27 17:13:56.374490"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicola"], ["created_at", "2018-03-27 17:13:56.382524"], ["updated_at", "2018-03-27 17:13:56.382524"]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Sotta"], ["created_at", "2018-03-27 17:13:56.392595"], ["updated_at", "2018-03-27 17:13:56.392595"]]
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qlocqqo@miuandes.cl"], ["created_at", "2018-03-27 17:13:56.402457"], ["updated_at", "2018-03-27 17:13:56.402457"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "723346711483"], ["created_at", "2018-03-27 17:13:56.412211"], ["updated_at", "2018-03-27 17:13:56.412211"]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "ladddd"], ["created_at", "2018-03-27 17:13:56.422220"], ["updated_at", "2018-03-27 17:13:56.422220"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapsrsa 2090"], ["created_at", "2018-03-27 17:13:56.430205"], ["updated_at", "2018-03-27 17:13:56.430205"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mandio"], ["created_at", "2018-03-27 17:13:56.446263"], ["updated_at", "2018-03-27 17:13:56.446263"]]
+  [1m[35m (11.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "asdassa"], ["created_at", "2018-03-27 17:13:56.459369"], ["updated_at", "2018-03-27 17:13:56.459369"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 101000], ["created_at", "2018-03-27 17:13:56.467274"], ["updated_at", "2018-03-27 17:13:56.467274"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mencillo"], ["created_at", "2018-03-27 17:13:56.477894"], ["updated_at", "2018-03-27 17:13:56.477894"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "asdassssa"], ["created_at", "2018-03-27 17:13:56.485096"], ["updated_at", "2018-03-27 17:13:56.485096"]]
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 30000], ["created_at", "2018-03-27 17:13:56.496414"], ["updated_at", "2018-03-27 17:13:56.496414"]]
+  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mandioma"], ["created_at", "2018-03-27 17:13:56.507766"], ["updated_at", "2018-03-27 17:13:56.507766"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "aassa"], ["created_at", "2018-03-27 17:13:56.517276"], ["updated_at", "2018-03-27 17:13:56.517276"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 100020], ["created_at", "2018-03-27 17:13:56.525236"], ["updated_at", "2018-03-27 17:13:56.525236"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan"], ["created_at", "2018-03-27 17:14:18.843248"], ["updated_at", "2018-03-27 17:14:18.843248"]]
+  [1m[35m (50.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Valdivieso"], ["created_at", "2018-03-27 17:14:18.898004"], ["updated_at", "2018-03-27 17:14:18.898004"]]
+  [1m[35m (16.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javal@miuandes.cl"], ["created_at", "2018-03-27 17:14:18.916503"], ["updated_at", "2018-03-27 17:14:18.916503"]]
+  [1m[35m (106.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7474747483"], ["created_at", "2018-03-27 17:14:19.024841"], ["updated_at", "2018-03-27 17:14:19.024841"]]
+  [1m[35m (42.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lala"], ["created_at", "2018-03-27 17:14:19.078236"], ["updated_at", "2018-03-27 17:14:19.078236"]]
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojoii 2090"], ["created_at", "2018-03-27 17:14:19.089223"], ["updated_at", "2018-03-27 17:14:19.089223"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan Manuel"], ["created_at", "2018-03-27 17:14:19.098088"], ["updated_at", "2018-03-27 17:14:19.098088"]]
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Campos"], ["created_at", "2018-03-27 17:14:19.108615"], ["updated_at", "2018-03-27 17:14:19.108615"]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javaaaweel@miuandes.cl"], ["created_at", "2018-03-27 17:14:19.119438"], ["updated_at", "2018-03-27 17:14:19.119438"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7472147483"], ["created_at", "2018-03-27 17:14:19.127446"], ["updated_at", "2018-03-27 17:14:19.127446"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lalasa"], ["created_at", "2018-03-27 17:14:19.134693"], ["updated_at", "2018-03-27 17:14:19.134693"]]
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojc 2090"], ["created_at", "2018-03-27 17:14:19.149525"], ["updated_at", "2018-03-27 17:14:19.149525"]]
+  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juana Manuela"], ["created_at", "2018-03-27 17:14:19.170504"], ["updated_at", "2018-03-27 17:14:19.170504"]]
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Camposa"], ["created_at", "2018-03-27 17:14:19.186546"], ["updated_at", "2018-03-27 17:14:19.186546"]]
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "jweel@miuandes.cl"], ["created_at", "2018-03-27 17:14:19.196831"], ["updated_at", "2018-03-27 17:14:19.196831"]]
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "767483"], ["created_at", "2018-03-27 17:14:19.206786"], ["updated_at", "2018-03-27 17:14:19.206786"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lasdasdlasa"], ["created_at", "2018-03-27 17:14:19.230372"], ["updated_at", "2018-03-27 17:14:19.230372"]]
+  [1m[35m (12.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojca334 2090"], ["created_at", "2018-03-27 17:14:19.245025"], ["updated_at", "2018-03-27 17:14:19.245025"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicol"], ["created_at", "2018-03-27 17:14:19.253515"], ["updated_at", "2018-03-27 17:14:19.253515"]]
+  [1m[35m (23.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Soto"], ["created_at", "2018-03-27 17:14:19.301068"], ["updated_at", "2018-03-27 17:14:19.301068"]]
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qloco@miuandes.cl"], ["created_at", "2018-03-27 17:14:19.313502"], ["updated_at", "2018-03-27 17:14:19.313502"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "76711483"], ["created_at", "2018-03-27 17:14:19.322257"], ["updated_at", "2018-03-27 17:14:19.322257"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "la"], ["created_at", "2018-03-27 17:14:19.330678"], ["updated_at", "2018-03-27 17:14:19.330678"]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapa 2090"], ["created_at", "2018-03-27 17:14:19.337427"], ["updated_at", "2018-03-27 17:14:19.337427"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicola"], ["created_at", "2018-03-27 17:14:19.348356"], ["updated_at", "2018-03-27 17:14:19.348356"]]
+  [1m[35m (18.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Sotta"], ["created_at", "2018-03-27 17:14:19.369486"], ["updated_at", "2018-03-27 17:14:19.369486"]]
+  [1m[35m (34.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qlocqqo@miuandes.cl"], ["created_at", "2018-03-27 17:14:19.407123"], ["updated_at", "2018-03-27 17:14:19.407123"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "723346711483"], ["created_at", "2018-03-27 17:14:19.414495"], ["updated_at", "2018-03-27 17:14:19.414495"]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "ladddd"], ["created_at", "2018-03-27 17:14:19.429853"], ["updated_at", "2018-03-27 17:14:19.429853"]]
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapsrsa 2090"], ["created_at", "2018-03-27 17:14:19.439237"], ["updated_at", "2018-03-27 17:14:19.439237"]]
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mandio"], ["created_at", "2018-03-27 17:14:19.463075"], ["updated_at", "2018-03-27 17:14:19.463075"]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "asdassa"], ["created_at", "2018-03-27 17:14:19.473869"], ["updated_at", "2018-03-27 17:14:19.473869"]]
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 101000], ["created_at", "2018-03-27 17:14:19.487981"], ["updated_at", "2018-03-27 17:14:19.487981"]]
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mencillo"], ["created_at", "2018-03-27 17:14:19.497422"], ["updated_at", "2018-03-27 17:14:19.497422"]]
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "asdassssa"], ["created_at", "2018-03-27 17:14:19.506782"], ["updated_at", "2018-03-27 17:14:19.506782"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 30000], ["created_at", "2018-03-27 17:14:19.514421"], ["updated_at", "2018-03-27 17:14:19.514421"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mandioma"], ["created_at", "2018-03-27 17:14:19.521047"], ["updated_at", "2018-03-27 17:14:19.521047"]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "aassa"], ["created_at", "2018-03-27 17:14:19.527537"], ["updated_at", "2018-03-27 17:14:19.527537"]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 100020], ["created_at", "2018-03-27 17:14:19.533185"], ["updated_at", "2018-03-27 17:14:19.533185"]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "bad bunny"], ["created_at", "2018-03-27 17:14:19.554035"], ["updated_at", "2018-03-27 17:14:19.554035"]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Trap sucio"], ["created_at", "2018-03-27 17:14:19.575695"], ["updated_at", "2018-03-27 17:14:19.575695"]]
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("start_date", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["start_date", "2019-08-08 00:00:00"], ["created_at", "2018-03-27 17:14:19.589735"], ["updated_at", "2018-03-27 17:14:19.589735"]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan"], ["created_at", "2018-03-27 17:16:38.525452"], ["updated_at", "2018-03-27 17:16:38.525452"]]
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Valdivieso"], ["created_at", "2018-03-27 17:16:38.536924"], ["updated_at", "2018-03-27 17:16:38.536924"]]
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javal@miuandes.cl"], ["created_at", "2018-03-27 17:16:38.550058"], ["updated_at", "2018-03-27 17:16:38.550058"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7474747483"], ["created_at", "2018-03-27 17:16:38.559241"], ["updated_at", "2018-03-27 17:16:38.559241"]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lala"], ["created_at", "2018-03-27 17:16:38.570774"], ["updated_at", "2018-03-27 17:16:38.570774"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojoii 2090"], ["created_at", "2018-03-27 17:16:38.579550"], ["updated_at", "2018-03-27 17:16:38.579550"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan Manuel"], ["created_at", "2018-03-27 17:16:38.588664"], ["updated_at", "2018-03-27 17:16:38.588664"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Campos"], ["created_at", "2018-03-27 17:16:38.597774"], ["updated_at", "2018-03-27 17:16:38.597774"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javaaaweel@miuandes.cl"], ["created_at", "2018-03-27 17:16:38.605871"], ["updated_at", "2018-03-27 17:16:38.605871"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7472147483"], ["created_at", "2018-03-27 17:16:38.614638"], ["updated_at", "2018-03-27 17:16:38.614638"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lalasa"], ["created_at", "2018-03-27 17:16:38.624241"], ["updated_at", "2018-03-27 17:16:38.624241"]]
+  [1m[35m (15.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojc 2090"], ["created_at", "2018-03-27 17:16:38.641569"], ["updated_at", "2018-03-27 17:16:38.641569"]]
+  [1m[35m (24.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juana Manuela"], ["created_at", "2018-03-27 17:16:38.670905"], ["updated_at", "2018-03-27 17:16:38.670905"]]
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Camposa"], ["created_at", "2018-03-27 17:16:38.686682"], ["updated_at", "2018-03-27 17:16:38.686682"]]
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "jweel@miuandes.cl"], ["created_at", "2018-03-27 17:16:38.697258"], ["updated_at", "2018-03-27 17:16:38.697258"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "767483"], ["created_at", "2018-03-27 17:16:38.706408"], ["updated_at", "2018-03-27 17:16:38.706408"]]
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lasdasdlasa"], ["created_at", "2018-03-27 17:16:38.717117"], ["updated_at", "2018-03-27 17:16:38.717117"]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojca334 2090"], ["created_at", "2018-03-27 17:16:38.724745"], ["updated_at", "2018-03-27 17:16:38.724745"]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicol"], ["created_at", "2018-03-27 17:16:38.734818"], ["updated_at", "2018-03-27 17:16:38.734818"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Soto"], ["created_at", "2018-03-27 17:16:38.745860"], ["updated_at", "2018-03-27 17:16:38.745860"]]
+  [1m[35m (21.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qloco@miuandes.cl"], ["created_at", "2018-03-27 17:16:38.780711"], ["updated_at", "2018-03-27 17:16:38.780711"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "76711483"], ["created_at", "2018-03-27 17:16:38.788738"], ["updated_at", "2018-03-27 17:16:38.788738"]]
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "la"], ["created_at", "2018-03-27 17:16:38.799214"], ["updated_at", "2018-03-27 17:16:38.799214"]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapa 2090"], ["created_at", "2018-03-27 17:16:38.808226"], ["updated_at", "2018-03-27 17:16:38.808226"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicola"], ["created_at", "2018-03-27 17:16:38.816060"], ["updated_at", "2018-03-27 17:16:38.816060"]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Sotta"], ["created_at", "2018-03-27 17:16:38.826193"], ["updated_at", "2018-03-27 17:16:38.826193"]]
+  [1m[35m (17.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qlocqqo@miuandes.cl"], ["created_at", "2018-03-27 17:16:38.844637"], ["updated_at", "2018-03-27 17:16:38.844637"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "723346711483"], ["created_at", "2018-03-27 17:16:38.854892"], ["updated_at", "2018-03-27 17:16:38.854892"]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "ladddd"], ["created_at", "2018-03-27 17:16:38.865776"], ["updated_at", "2018-03-27 17:16:38.865776"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapsrsa 2090"], ["created_at", "2018-03-27 17:16:38.877728"], ["updated_at", "2018-03-27 17:16:38.877728"]]
+  [1m[35m (11.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mandio"], ["created_at", "2018-03-27 17:16:38.898706"], ["updated_at", "2018-03-27 17:16:38.898706"]]
+  [1m[35m (13.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "asdassa"], ["created_at", "2018-03-27 17:16:38.915784"], ["updated_at", "2018-03-27 17:16:38.915784"]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 101000], ["created_at", "2018-03-27 17:16:38.926969"], ["updated_at", "2018-03-27 17:16:38.926969"]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mencillo"], ["created_at", "2018-03-27 17:16:38.938449"], ["updated_at", "2018-03-27 17:16:38.938449"]]
+  [1m[35m (13.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "asdassssa"], ["created_at", "2018-03-27 17:16:38.955044"], ["updated_at", "2018-03-27 17:16:38.955044"]]
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (15.5ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 30000], ["created_at", "2018-03-27 17:16:38.965057"], ["updated_at", "2018-03-27 17:16:38.965057"]]
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mandioma"], ["created_at", "2018-03-27 17:16:38.988804"], ["updated_at", "2018-03-27 17:16:38.988804"]]
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "aassa"], ["created_at", "2018-03-27 17:16:38.999283"], ["updated_at", "2018-03-27 17:16:38.999283"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 100020], ["created_at", "2018-03-27 17:16:39.007103"], ["updated_at", "2018-03-27 17:16:39.007103"]]
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.6ms)[0m  [1m[32mINSERT INTO "events" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "bad bunny"], ["created_at", "2018-03-27 17:16:39.034797"], ["updated_at", "2018-03-27 17:16:39.034797"]]
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Trap sucio"], ["created_at", "2018-03-27 17:16:39.053133"], ["updated_at", "2018-03-27 17:16:39.053133"]]
+  [1m[35m (14.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("start_date", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["start_date", "2019-08-08 00:00:00"], ["created_at", "2018-03-27 17:16:39.070193"], ["updated_at", "2018-03-27 17:16:39.070193"]]
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan"], ["created_at", "2018-03-27 17:18:21.651285"], ["updated_at", "2018-03-27 17:18:21.651285"]]
+  [1m[35m (24.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Valdivieso"], ["created_at", "2018-03-27 17:18:21.680702"], ["updated_at", "2018-03-27 17:18:21.680702"]]
+  [1m[35m (14.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javal@miuandes.cl"], ["created_at", "2018-03-27 17:18:21.701070"], ["updated_at", "2018-03-27 17:18:21.701070"]]
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7474747483"], ["created_at", "2018-03-27 17:18:21.716354"], ["updated_at", "2018-03-27 17:18:21.716354"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lala"], ["created_at", "2018-03-27 17:18:21.725297"], ["updated_at", "2018-03-27 17:18:21.725297"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojoii 2090"], ["created_at", "2018-03-27 17:18:21.732642"], ["updated_at", "2018-03-27 17:18:21.732642"]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan Manuel"], ["created_at", "2018-03-27 17:18:21.738805"], ["updated_at", "2018-03-27 17:18:21.738805"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Campos"], ["created_at", "2018-03-27 17:18:21.748986"], ["updated_at", "2018-03-27 17:18:21.748986"]]
+  [1m[35m (14.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javaaaweel@miuandes.cl"], ["created_at", "2018-03-27 17:18:21.764948"], ["updated_at", "2018-03-27 17:18:21.764948"]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7472147483"], ["created_at", "2018-03-27 17:18:21.775908"], ["updated_at", "2018-03-27 17:18:21.775908"]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lalasa"], ["created_at", "2018-03-27 17:18:21.786817"], ["updated_at", "2018-03-27 17:18:21.786817"]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojc 2090"], ["created_at", "2018-03-27 17:18:21.796862"], ["updated_at", "2018-03-27 17:18:21.796862"]]
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juana Manuela"], ["created_at", "2018-03-27 17:18:21.810131"], ["updated_at", "2018-03-27 17:18:21.810131"]]
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Camposa"], ["created_at", "2018-03-27 17:18:21.821867"], ["updated_at", "2018-03-27 17:18:21.821867"]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "jweel@miuandes.cl"], ["created_at", "2018-03-27 17:18:21.832262"], ["updated_at", "2018-03-27 17:18:21.832262"]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "767483"], ["created_at", "2018-03-27 17:18:21.842956"], ["updated_at", "2018-03-27 17:18:21.842956"]]
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lasdasdlasa"], ["created_at", "2018-03-27 17:18:21.854142"], ["updated_at", "2018-03-27 17:18:21.854142"]]
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojca334 2090"], ["created_at", "2018-03-27 17:18:21.867042"], ["updated_at", "2018-03-27 17:18:21.867042"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicol"], ["created_at", "2018-03-27 17:18:21.874673"], ["updated_at", "2018-03-27 17:18:21.874673"]]
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Soto"], ["created_at", "2018-03-27 17:18:21.882654"], ["updated_at", "2018-03-27 17:18:21.882654"]]
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qloco@miuandes.cl"], ["created_at", "2018-03-27 17:18:21.894792"], ["updated_at", "2018-03-27 17:18:21.894792"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "76711483"], ["created_at", "2018-03-27 17:18:21.903307"], ["updated_at", "2018-03-27 17:18:21.903307"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "la"], ["created_at", "2018-03-27 17:18:21.911299"], ["updated_at", "2018-03-27 17:18:21.911299"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapa 2090"], ["created_at", "2018-03-27 17:18:21.919671"], ["updated_at", "2018-03-27 17:18:21.919671"]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicola"], ["created_at", "2018-03-27 17:18:21.928720"], ["updated_at", "2018-03-27 17:18:21.928720"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Sotta"], ["created_at", "2018-03-27 17:18:21.936871"], ["updated_at", "2018-03-27 17:18:21.936871"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qlocqqo@miuandes.cl"], ["created_at", "2018-03-27 17:18:21.944625"], ["updated_at", "2018-03-27 17:18:21.944625"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "723346711483"], ["created_at", "2018-03-27 17:18:21.952211"], ["updated_at", "2018-03-27 17:18:21.952211"]]
+  [1m[35m (22.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "ladddd"], ["created_at", "2018-03-27 17:18:21.976320"], ["updated_at", "2018-03-27 17:18:21.976320"]]
+  [1m[35m (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapsrsa 2090"], ["created_at", "2018-03-27 17:18:21.987940"], ["updated_at", "2018-03-27 17:18:21.987940"]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mandio"], ["created_at", "2018-03-27 17:18:22.005560"], ["updated_at", "2018-03-27 17:18:22.005560"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "asdassa"], ["created_at", "2018-03-27 17:18:22.012377"], ["updated_at", "2018-03-27 17:18:22.012377"]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 101000], ["created_at", "2018-03-27 17:18:22.021830"], ["updated_at", "2018-03-27 17:18:22.021830"]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mencillo"], ["created_at", "2018-03-27 17:18:22.028518"], ["updated_at", "2018-03-27 17:18:22.028518"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "asdassssa"], ["created_at", "2018-03-27 17:18:22.035608"], ["updated_at", "2018-03-27 17:18:22.035608"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 30000], ["created_at", "2018-03-27 17:18:22.042353"], ["updated_at", "2018-03-27 17:18:22.042353"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mandioma"], ["created_at", "2018-03-27 17:18:22.049447"], ["updated_at", "2018-03-27 17:18:22.049447"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (13.4ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "aassa"], ["created_at", "2018-03-27 17:18:22.057054"], ["updated_at", "2018-03-27 17:18:22.057054"]]
+  [1m[35m (14.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 100020], ["created_at", "2018-03-27 17:18:22.085966"], ["updated_at", "2018-03-27 17:18:22.085966"]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "events" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "bad bunny"], ["created_at", "2018-03-27 17:18:22.113376"], ["updated_at", "2018-03-27 17:18:22.113376"]]
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Trap sucio"], ["created_at", "2018-03-27 17:18:22.125999"], ["updated_at", "2018-03-27 17:18:22.125999"]]
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "events" ("start_date", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["start_date", "2019-08-08 00:00:00"], ["created_at", "2018-03-27 17:18:22.140818"], ["updated_at", "2018-03-27 17:18:22.140818"]]
+  [1m[35m (10.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan"], ["created_at", "2018-03-27 17:19:14.315285"], ["updated_at", "2018-03-27 17:19:14.315285"]]
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Valdivieso"], ["created_at", "2018-03-27 17:19:14.329194"], ["updated_at", "2018-03-27 17:19:14.329194"]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javal@miuandes.cl"], ["created_at", "2018-03-27 17:19:14.347462"], ["updated_at", "2018-03-27 17:19:14.347462"]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7474747483"], ["created_at", "2018-03-27 17:19:14.356989"], ["updated_at", "2018-03-27 17:19:14.356989"]]
+  [1m[35m (11.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lala"], ["created_at", "2018-03-27 17:19:14.373815"], ["updated_at", "2018-03-27 17:19:14.373815"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojoii 2090"], ["created_at", "2018-03-27 17:19:14.381566"], ["updated_at", "2018-03-27 17:19:14.381566"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan Manuel"], ["created_at", "2018-03-27 17:19:14.391922"], ["updated_at", "2018-03-27 17:19:14.391922"]]
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Campos"], ["created_at", "2018-03-27 17:19:14.402299"], ["updated_at", "2018-03-27 17:19:14.402299"]]
+  [1m[35m (20.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javaaaweel@miuandes.cl"], ["created_at", "2018-03-27 17:19:14.431126"], ["updated_at", "2018-03-27 17:19:14.431126"]]
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7472147483"], ["created_at", "2018-03-27 17:19:14.452758"], ["updated_at", "2018-03-27 17:19:14.452758"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lalasa"], ["created_at", "2018-03-27 17:19:14.464531"], ["updated_at", "2018-03-27 17:19:14.464531"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojc 2090"], ["created_at", "2018-03-27 17:19:14.473667"], ["updated_at", "2018-03-27 17:19:14.473667"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juana Manuela"], ["created_at", "2018-03-27 17:19:14.482073"], ["updated_at", "2018-03-27 17:19:14.482073"]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Camposa"], ["created_at", "2018-03-27 17:19:14.489274"], ["updated_at", "2018-03-27 17:19:14.489274"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "jweel@miuandes.cl"], ["created_at", "2018-03-27 17:19:14.496259"], ["updated_at", "2018-03-27 17:19:14.496259"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "767483"], ["created_at", "2018-03-27 17:19:14.503488"], ["updated_at", "2018-03-27 17:19:14.503488"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lasdasdlasa"], ["created_at", "2018-03-27 17:19:14.510462"], ["updated_at", "2018-03-27 17:19:14.510462"]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (12.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojca334 2090"], ["created_at", "2018-03-27 17:19:14.529601"], ["updated_at", "2018-03-27 17:19:14.529601"]]
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicol"], ["created_at", "2018-03-27 17:19:14.546074"], ["updated_at", "2018-03-27 17:19:14.546074"]]
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Soto"], ["created_at", "2018-03-27 17:19:14.564720"], ["updated_at", "2018-03-27 17:19:14.564720"]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qloco@miuandes.cl"], ["created_at", "2018-03-27 17:19:14.571159"], ["updated_at", "2018-03-27 17:19:14.571159"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "76711483"], ["created_at", "2018-03-27 17:19:14.579314"], ["updated_at", "2018-03-27 17:19:14.579314"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "la"], ["created_at", "2018-03-27 17:19:14.586548"], ["updated_at", "2018-03-27 17:19:14.586548"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapa 2090"], ["created_at", "2018-03-27 17:19:14.594563"], ["updated_at", "2018-03-27 17:19:14.594563"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicola"], ["created_at", "2018-03-27 17:19:14.605417"], ["updated_at", "2018-03-27 17:19:14.605417"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Sotta"], ["created_at", "2018-03-27 17:19:14.612360"], ["updated_at", "2018-03-27 17:19:14.612360"]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qlocqqo@miuandes.cl"], ["created_at", "2018-03-27 17:19:14.623978"], ["updated_at", "2018-03-27 17:19:14.623978"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "723346711483"], ["created_at", "2018-03-27 17:19:14.632276"], ["updated_at", "2018-03-27 17:19:14.632276"]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "ladddd"], ["created_at", "2018-03-27 17:19:14.641374"], ["updated_at", "2018-03-27 17:19:14.641374"]]
+  [1m[35m (13.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapsrsa 2090"], ["created_at", "2018-03-27 17:19:14.656973"], ["updated_at", "2018-03-27 17:19:14.656973"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mandio"], ["created_at", "2018-03-27 17:19:14.681256"], ["updated_at", "2018-03-27 17:19:14.681256"]]
+  [1m[35m (51.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "asdassa"], ["created_at", "2018-03-27 17:19:14.736012"], ["updated_at", "2018-03-27 17:19:14.736012"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 101000], ["created_at", "2018-03-27 17:19:14.742957"], ["updated_at", "2018-03-27 17:19:14.742957"]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mencillo"], ["created_at", "2018-03-27 17:19:14.751769"], ["updated_at", "2018-03-27 17:19:14.751769"]]
+  [1m[35m (15.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "asdassssa"], ["created_at", "2018-03-27 17:19:14.770067"], ["updated_at", "2018-03-27 17:19:14.770067"]]
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 30000], ["created_at", "2018-03-27 17:19:14.782628"], ["updated_at", "2018-03-27 17:19:14.782628"]]
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mandioma"], ["created_at", "2018-03-27 17:19:14.794265"], ["updated_at", "2018-03-27 17:19:14.794265"]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "aassa"], ["created_at", "2018-03-27 17:19:14.803643"], ["updated_at", "2018-03-27 17:19:14.803643"]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 100020], ["created_at", "2018-03-27 17:19:14.813509"], ["updated_at", "2018-03-27 17:19:14.813509"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "events" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "bad bunny"], ["created_at", "2018-03-27 17:19:14.831594"], ["updated_at", "2018-03-27 17:19:14.831594"]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "events" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Trap sucio"], ["created_at", "2018-03-27 17:19:14.844233"], ["updated_at", "2018-03-27 17:19:14.844233"]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("start_date", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["start_date", "2019-08-08 00:00:00"], ["created_at", "2018-03-27 17:19:14.854045"], ["updated_at", "2018-03-27 17:19:14.854045"]]
+  [1m[35m (17.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan"], ["created_at", "2018-03-27 17:19:28.417205"], ["updated_at", "2018-03-27 17:19:28.417205"]]
+  [1m[35m (19.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Valdivieso"], ["created_at", "2018-03-27 17:19:28.439250"], ["updated_at", "2018-03-27 17:19:28.439250"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javal@miuandes.cl"], ["created_at", "2018-03-27 17:19:28.450252"], ["updated_at", "2018-03-27 17:19:28.450252"]]
+  [1m[35m (11.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7474747483"], ["created_at", "2018-03-27 17:19:28.466496"], ["updated_at", "2018-03-27 17:19:28.466496"]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lala"], ["created_at", "2018-03-27 17:19:28.476637"], ["updated_at", "2018-03-27 17:19:28.476637"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojoii 2090"], ["created_at", "2018-03-27 17:19:28.486469"], ["updated_at", "2018-03-27 17:19:28.486469"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan Manuel"], ["created_at", "2018-03-27 17:19:28.497258"], ["updated_at", "2018-03-27 17:19:28.497258"]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Campos"], ["created_at", "2018-03-27 17:19:28.506705"], ["updated_at", "2018-03-27 17:19:28.506705"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javaaaweel@miuandes.cl"], ["created_at", "2018-03-27 17:19:28.518404"], ["updated_at", "2018-03-27 17:19:28.518404"]]
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7472147483"], ["created_at", "2018-03-27 17:19:28.531588"], ["updated_at", "2018-03-27 17:19:28.531588"]]
+  [1m[35m (21.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lalasa"], ["created_at", "2018-03-27 17:19:28.562150"], ["updated_at", "2018-03-27 17:19:28.562150"]]
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojc 2090"], ["created_at", "2018-03-27 17:19:28.577655"], ["updated_at", "2018-03-27 17:19:28.577655"]]
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juana Manuela"], ["created_at", "2018-03-27 17:19:28.590968"], ["updated_at", "2018-03-27 17:19:28.590968"]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Camposa"], ["created_at", "2018-03-27 17:19:28.601490"], ["updated_at", "2018-03-27 17:19:28.601490"]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "jweel@miuandes.cl"], ["created_at", "2018-03-27 17:19:28.613024"], ["updated_at", "2018-03-27 17:19:28.613024"]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "767483"], ["created_at", "2018-03-27 17:19:28.626270"], ["updated_at", "2018-03-27 17:19:28.626270"]]
+  [1m[35m (39.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lasdasdlasa"], ["created_at", "2018-03-27 17:19:28.669478"], ["updated_at", "2018-03-27 17:19:28.669478"]]
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojca334 2090"], ["created_at", "2018-03-27 17:19:28.681062"], ["updated_at", "2018-03-27 17:19:28.681062"]]
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicol"], ["created_at", "2018-03-27 17:19:28.694299"], ["updated_at", "2018-03-27 17:19:28.694299"]]
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Soto"], ["created_at", "2018-03-27 17:19:28.708034"], ["updated_at", "2018-03-27 17:19:28.708034"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qloco@miuandes.cl"], ["created_at", "2018-03-27 17:19:28.716294"], ["updated_at", "2018-03-27 17:19:28.716294"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "76711483"], ["created_at", "2018-03-27 17:19:28.724426"], ["updated_at", "2018-03-27 17:19:28.724426"]]
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "la"], ["created_at", "2018-03-27 17:19:28.735233"], ["updated_at", "2018-03-27 17:19:28.735233"]]
+  [1m[35m (77.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapa 2090"], ["created_at", "2018-03-27 17:19:28.814558"], ["updated_at", "2018-03-27 17:19:28.814558"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicola"], ["created_at", "2018-03-27 17:19:28.821362"], ["updated_at", "2018-03-27 17:19:28.821362"]]
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Sotta"], ["created_at", "2018-03-27 17:19:28.830072"], ["updated_at", "2018-03-27 17:19:28.830072"]]
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qlocqqo@miuandes.cl"], ["created_at", "2018-03-27 17:19:28.840950"], ["updated_at", "2018-03-27 17:19:28.840950"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "723346711483"], ["created_at", "2018-03-27 17:19:28.848711"], ["updated_at", "2018-03-27 17:19:28.848711"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "ladddd"], ["created_at", "2018-03-27 17:19:28.856633"], ["updated_at", "2018-03-27 17:19:28.856633"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapsrsa 2090"], ["created_at", "2018-03-27 17:19:28.864020"], ["updated_at", "2018-03-27 17:19:28.864020"]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mandio"], ["created_at", "2018-03-27 17:19:28.890106"], ["updated_at", "2018-03-27 17:19:28.890106"]]
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "asdassa"], ["created_at", "2018-03-27 17:19:28.903894"], ["updated_at", "2018-03-27 17:19:28.903894"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 101000], ["created_at", "2018-03-27 17:19:28.912419"], ["updated_at", "2018-03-27 17:19:28.912419"]]
+  [1m[35m (14.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mencillo"], ["created_at", "2018-03-27 17:19:28.931809"], ["updated_at", "2018-03-27 17:19:28.931809"]]
+  [1m[35m (16.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "asdassssa"], ["created_at", "2018-03-27 17:19:28.952567"], ["updated_at", "2018-03-27 17:19:28.952567"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 30000], ["created_at", "2018-03-27 17:19:28.959929"], ["updated_at", "2018-03-27 17:19:28.959929"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mandioma"], ["created_at", "2018-03-27 17:19:28.967314"], ["updated_at", "2018-03-27 17:19:28.967314"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "aassa"], ["created_at", "2018-03-27 17:19:28.974464"], ["updated_at", "2018-03-27 17:19:28.974464"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 100020], ["created_at", "2018-03-27 17:19:28.981681"], ["updated_at", "2018-03-27 17:19:28.981681"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "bad bunny"], ["created_at", "2018-03-27 17:19:29.001708"], ["updated_at", "2018-03-27 17:19:29.001708"]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Trap sucio"], ["created_at", "2018-03-27 17:19:29.008729"], ["updated_at", "2018-03-27 17:19:29.008729"]]
+  [1m[35m (18.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("start_date", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["start_date", "2019-08-08 00:00:00"], ["created_at", "2018-03-27 17:19:29.029434"], ["updated_at", "2018-03-27 17:19:29.029434"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan"], ["created_at", "2018-03-27 17:20:00.204953"], ["updated_at", "2018-03-27 17:20:00.204953"]]
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Valdivieso"], ["created_at", "2018-03-27 17:20:00.217624"], ["updated_at", "2018-03-27 17:20:00.217624"]]
+  [1m[35m (9.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javal@miuandes.cl"], ["created_at", "2018-03-27 17:20:00.230214"], ["updated_at", "2018-03-27 17:20:00.230214"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7474747483"], ["created_at", "2018-03-27 17:20:00.239293"], ["updated_at", "2018-03-27 17:20:00.239293"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lala"], ["created_at", "2018-03-27 17:20:00.247517"], ["updated_at", "2018-03-27 17:20:00.247517"]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojoii 2090"], ["created_at", "2018-03-27 17:20:00.263251"], ["updated_at", "2018-03-27 17:20:00.263251"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan Manuel"], ["created_at", "2018-03-27 17:20:00.271318"], ["updated_at", "2018-03-27 17:20:00.271318"]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Campos"], ["created_at", "2018-03-27 17:20:00.282079"], ["updated_at", "2018-03-27 17:20:00.282079"]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javaaaweel@miuandes.cl"], ["created_at", "2018-03-27 17:20:00.295110"], ["updated_at", "2018-03-27 17:20:00.295110"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7472147483"], ["created_at", "2018-03-27 17:20:00.303735"], ["updated_at", "2018-03-27 17:20:00.303735"]]
+  [1m[35m (33.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lalasa"], ["created_at", "2018-03-27 17:20:00.338831"], ["updated_at", "2018-03-27 17:20:00.338831"]]
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojc 2090"], ["created_at", "2018-03-27 17:20:00.349361"], ["updated_at", "2018-03-27 17:20:00.349361"]]
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juana Manuela"], ["created_at", "2018-03-27 17:20:00.361657"], ["updated_at", "2018-03-27 17:20:00.361657"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Camposa"], ["created_at", "2018-03-27 17:20:00.377267"], ["updated_at", "2018-03-27 17:20:00.377267"]]
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "jweel@miuandes.cl"], ["created_at", "2018-03-27 17:20:00.386534"], ["updated_at", "2018-03-27 17:20:00.386534"]]
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "767483"], ["created_at", "2018-03-27 17:20:00.396204"], ["updated_at", "2018-03-27 17:20:00.396204"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lasdasdlasa"], ["created_at", "2018-03-27 17:20:00.408561"], ["updated_at", "2018-03-27 17:20:00.408561"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojca334 2090"], ["created_at", "2018-03-27 17:20:00.416176"], ["updated_at", "2018-03-27 17:20:00.416176"]]
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicol"], ["created_at", "2018-03-27 17:20:00.434197"], ["updated_at", "2018-03-27 17:20:00.434197"]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (7.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Soto"], ["created_at", "2018-03-27 17:20:00.451063"], ["updated_at", "2018-03-27 17:20:00.451063"]]
+  [1m[35m (18.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qloco@miuandes.cl"], ["created_at", "2018-03-27 17:20:00.471188"], ["updated_at", "2018-03-27 17:20:00.471188"]]
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "76711483"], ["created_at", "2018-03-27 17:20:00.485499"], ["updated_at", "2018-03-27 17:20:00.485499"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "la"], ["created_at", "2018-03-27 17:20:00.495309"], ["updated_at", "2018-03-27 17:20:00.495309"]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapa 2090"], ["created_at", "2018-03-27 17:20:00.505274"], ["updated_at", "2018-03-27 17:20:00.505274"]]
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicola"], ["created_at", "2018-03-27 17:20:00.515104"], ["updated_at", "2018-03-27 17:20:00.515104"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Sotta"], ["created_at", "2018-03-27 17:20:00.524096"], ["updated_at", "2018-03-27 17:20:00.524096"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qlocqqo@miuandes.cl"], ["created_at", "2018-03-27 17:20:00.532706"], ["updated_at", "2018-03-27 17:20:00.532706"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "723346711483"], ["created_at", "2018-03-27 17:20:00.541918"], ["updated_at", "2018-03-27 17:20:00.541918"]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "ladddd"], ["created_at", "2018-03-27 17:20:00.554175"], ["updated_at", "2018-03-27 17:20:00.554175"]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapsrsa 2090"], ["created_at", "2018-03-27 17:20:00.567505"], ["updated_at", "2018-03-27 17:20:00.567505"]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mandio"], ["created_at", "2018-03-27 17:20:00.583429"], ["updated_at", "2018-03-27 17:20:00.583429"]]
+  [1m[35m (11.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "asdassa"], ["created_at", "2018-03-27 17:20:00.597736"], ["updated_at", "2018-03-27 17:20:00.597736"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 101000], ["created_at", "2018-03-27 17:20:00.605692"], ["updated_at", "2018-03-27 17:20:00.605692"]]
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mencillo"], ["created_at", "2018-03-27 17:20:00.614099"], ["updated_at", "2018-03-27 17:20:00.614099"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "asdassssa"], ["created_at", "2018-03-27 17:20:00.622903"], ["updated_at", "2018-03-27 17:20:00.622903"]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 30000], ["created_at", "2018-03-27 17:20:00.630427"], ["updated_at", "2018-03-27 17:20:00.630427"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mandioma"], ["created_at", "2018-03-27 17:20:00.637863"], ["updated_at", "2018-03-27 17:20:00.637863"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "aassa"], ["created_at", "2018-03-27 17:20:00.646190"], ["updated_at", "2018-03-27 17:20:00.646190"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 100020], ["created_at", "2018-03-27 17:20:00.654446"], ["updated_at", "2018-03-27 17:20:00.654446"]]
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "bad bunny"], ["created_at", "2018-03-27 17:20:00.678441"], ["updated_at", "2018-03-27 17:20:00.678441"]]
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Trap sucio"], ["created_at", "2018-03-27 17:20:00.694146"], ["updated_at", "2018-03-27 17:20:00.694146"]]
+  [1m[35m (10.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("start_date", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["start_date", "2019-08-08 00:00:00"], ["created_at", "2018-03-27 17:20:00.709110"], ["updated_at", "2018-03-27 17:20:00.709110"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan"], ["created_at", "2018-03-27 17:20:35.050456"], ["updated_at", "2018-03-27 17:20:35.050456"]]
+  [1m[35m (14.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Valdivieso"], ["created_at", "2018-03-27 17:20:35.069847"], ["updated_at", "2018-03-27 17:20:35.069847"]]
+  [1m[35m (17.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javal@miuandes.cl"], ["created_at", "2018-03-27 17:20:35.089452"], ["updated_at", "2018-03-27 17:20:35.089452"]]
+  [1m[35m (14.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7474747483"], ["created_at", "2018-03-27 17:20:35.106290"], ["updated_at", "2018-03-27 17:20:35.106290"]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lala"], ["created_at", "2018-03-27 17:20:35.117313"], ["updated_at", "2018-03-27 17:20:35.117313"]]
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojoii 2090"], ["created_at", "2018-03-27 17:20:35.130110"], ["updated_at", "2018-03-27 17:20:35.130110"]]
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan Manuel"], ["created_at", "2018-03-27 17:20:35.140097"], ["updated_at", "2018-03-27 17:20:35.140097"]]
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Campos"], ["created_at", "2018-03-27 17:20:35.149662"], ["updated_at", "2018-03-27 17:20:35.149662"]]
+  [1m[35m (39.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javaaaweel@miuandes.cl"], ["created_at", "2018-03-27 17:20:35.191025"], ["updated_at", "2018-03-27 17:20:35.191025"]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7472147483"], ["created_at", "2018-03-27 17:20:35.201464"], ["updated_at", "2018-03-27 17:20:35.201464"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lalasa"], ["created_at", "2018-03-27 17:20:35.209668"], ["updated_at", "2018-03-27 17:20:35.209668"]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojc 2090"], ["created_at", "2018-03-27 17:20:35.222668"], ["updated_at", "2018-03-27 17:20:35.222668"]]
+  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juana Manuela"], ["created_at", "2018-03-27 17:20:35.234151"], ["updated_at", "2018-03-27 17:20:35.234151"]]
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Camposa"], ["created_at", "2018-03-27 17:20:35.244043"], ["updated_at", "2018-03-27 17:20:35.244043"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "jweel@miuandes.cl"], ["created_at", "2018-03-27 17:20:35.252973"], ["updated_at", "2018-03-27 17:20:35.252973"]]
+  [1m[35m (36.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "767483"], ["created_at", "2018-03-27 17:20:35.301754"], ["updated_at", "2018-03-27 17:20:35.301754"]]
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lasdasdlasa"], ["created_at", "2018-03-27 17:20:35.313507"], ["updated_at", "2018-03-27 17:20:35.313507"]]
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojca334 2090"], ["created_at", "2018-03-27 17:20:35.325878"], ["updated_at", "2018-03-27 17:20:35.325878"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicol"], ["created_at", "2018-03-27 17:20:35.333954"], ["updated_at", "2018-03-27 17:20:35.333954"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Soto"], ["created_at", "2018-03-27 17:20:35.342848"], ["updated_at", "2018-03-27 17:20:35.342848"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qloco@miuandes.cl"], ["created_at", "2018-03-27 17:20:35.351339"], ["updated_at", "2018-03-27 17:20:35.351339"]]
+  [1m[35m (15.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "76711483"], ["created_at", "2018-03-27 17:20:35.368863"], ["updated_at", "2018-03-27 17:20:35.368863"]]
+  [1m[35m (16.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "la"], ["created_at", "2018-03-27 17:20:35.388041"], ["updated_at", "2018-03-27 17:20:35.388041"]]
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapa 2090"], ["created_at", "2018-03-27 17:20:35.397701"], ["updated_at", "2018-03-27 17:20:35.397701"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicola"], ["created_at", "2018-03-27 17:20:35.411421"], ["updated_at", "2018-03-27 17:20:35.411421"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Sotta"], ["created_at", "2018-03-27 17:20:35.419313"], ["updated_at", "2018-03-27 17:20:35.419313"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qlocqqo@miuandes.cl"], ["created_at", "2018-03-27 17:20:35.427671"], ["updated_at", "2018-03-27 17:20:35.427671"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "723346711483"], ["created_at", "2018-03-27 17:20:35.435625"], ["updated_at", "2018-03-27 17:20:35.435625"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "ladddd"], ["created_at", "2018-03-27 17:20:35.443867"], ["updated_at", "2018-03-27 17:20:35.443867"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapsrsa 2090"], ["created_at", "2018-03-27 17:20:35.452859"], ["updated_at", "2018-03-27 17:20:35.452859"]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mandio"], ["created_at", "2018-03-27 17:20:35.477301"], ["updated_at", "2018-03-27 17:20:35.477301"]]
+  [1m[35m (11.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "asdassa"], ["created_at", "2018-03-27 17:20:35.491650"], ["updated_at", "2018-03-27 17:20:35.491650"]]
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 101000], ["created_at", "2018-03-27 17:20:35.503410"], ["updated_at", "2018-03-27 17:20:35.503410"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mencillo"], ["created_at", "2018-03-27 17:20:35.511587"], ["updated_at", "2018-03-27 17:20:35.511587"]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "asdassssa"], ["created_at", "2018-03-27 17:20:35.524194"], ["updated_at", "2018-03-27 17:20:35.524194"]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 30000], ["created_at", "2018-03-27 17:20:35.534475"], ["updated_at", "2018-03-27 17:20:35.534475"]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mandioma"], ["created_at", "2018-03-27 17:20:35.544004"], ["updated_at", "2018-03-27 17:20:35.544004"]]
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "aassa"], ["created_at", "2018-03-27 17:20:35.552926"], ["updated_at", "2018-03-27 17:20:35.552926"]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 100020], ["created_at", "2018-03-27 17:20:35.563233"], ["updated_at", "2018-03-27 17:20:35.563233"]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "bad bunny"], ["created_at", "2018-03-27 17:20:35.579385"], ["updated_at", "2018-03-27 17:20:35.579385"]]
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Trap sucio"], ["created_at", "2018-03-27 17:20:35.588559"], ["updated_at", "2018-03-27 17:20:35.588559"]]
+  [1m[35m (11.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("start_date", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["start_date", "2019-08-08 00:00:00"], ["created_at", "2018-03-27 17:20:35.601815"], ["updated_at", "2018-03-27 17:20:35.601815"]]
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan"], ["created_at", "2018-03-27 17:21:22.566314"], ["updated_at", "2018-03-27 17:21:22.566314"]]
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Valdivieso"], ["created_at", "2018-03-27 17:21:22.578988"], ["updated_at", "2018-03-27 17:21:22.578988"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javal@miuandes.cl"], ["created_at", "2018-03-27 17:21:22.585820"], ["updated_at", "2018-03-27 17:21:22.585820"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7474747483"], ["created_at", "2018-03-27 17:21:22.593117"], ["updated_at", "2018-03-27 17:21:22.593117"]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lala"], ["created_at", "2018-03-27 17:21:22.608496"], ["updated_at", "2018-03-27 17:21:22.608496"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojoii 2090"], ["created_at", "2018-03-27 17:21:22.617216"], ["updated_at", "2018-03-27 17:21:22.617216"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan Manuel"], ["created_at", "2018-03-27 17:21:22.627110"], ["updated_at", "2018-03-27 17:21:22.627110"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Campos"], ["created_at", "2018-03-27 17:21:22.636386"], ["updated_at", "2018-03-27 17:21:22.636386"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "javaaaweel@miuandes.cl"], ["created_at", "2018-03-27 17:21:22.645509"], ["updated_at", "2018-03-27 17:21:22.645509"]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "7472147483"], ["created_at", "2018-03-27 17:21:22.655045"], ["updated_at", "2018-03-27 17:21:22.655045"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lalasa"], ["created_at", "2018-03-27 17:21:22.684765"], ["updated_at", "2018-03-27 17:21:22.684765"]]
+  [1m[35m (12.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojc 2090"], ["created_at", "2018-03-27 17:21:22.703640"], ["updated_at", "2018-03-27 17:21:22.703640"]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juana Manuela"], ["created_at", "2018-03-27 17:21:22.715879"], ["updated_at", "2018-03-27 17:21:22.715879"]]
+  [1m[35m (11.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Camposa"], ["created_at", "2018-03-27 17:21:22.730186"], ["updated_at", "2018-03-27 17:21:22.730186"]]
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "jweel@miuandes.cl"], ["created_at", "2018-03-27 17:21:22.739562"], ["updated_at", "2018-03-27 17:21:22.739562"]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "767483"], ["created_at", "2018-03-27 17:21:22.751666"], ["updated_at", "2018-03-27 17:21:22.751666"]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "lasdasdlasa"], ["created_at", "2018-03-27 17:21:22.758185"], ["updated_at", "2018-03-27 17:21:22.758185"]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "jojca334 2090"], ["created_at", "2018-03-27 17:21:22.764440"], ["updated_at", "2018-03-27 17:21:22.764440"]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicol"], ["created_at", "2018-03-27 17:21:22.772642"], ["updated_at", "2018-03-27 17:21:22.772642"]]
+  [1m[35m (38.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Soto"], ["created_at", "2018-03-27 17:21:22.812326"], ["updated_at", "2018-03-27 17:21:22.812326"]]
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qloco@miuandes.cl"], ["created_at", "2018-03-27 17:21:22.827469"], ["updated_at", "2018-03-27 17:21:22.827469"]]
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "76711483"], ["created_at", "2018-03-27 17:21:22.837187"], ["updated_at", "2018-03-27 17:21:22.837187"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "la"], ["created_at", "2018-03-27 17:21:22.844947"], ["updated_at", "2018-03-27 17:21:22.844947"]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapa 2090"], ["created_at", "2018-03-27 17:21:22.851407"], ["updated_at", "2018-03-27 17:21:22.851407"]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maicola"], ["created_at", "2018-03-27 17:21:22.857707"], ["updated_at", "2018-03-27 17:21:22.857707"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("last_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["last_name", "Sotta"], ["created_at", "2018-03-27 17:21:22.868377"], ["updated_at", "2018-03-27 17:21:22.868377"]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "qlocqqo@miuandes.cl"], ["created_at", "2018-03-27 17:21:22.876941"], ["updated_at", "2018-03-27 17:21:22.876941"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("phone", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["phone", "723346711483"], ["created_at", "2018-03-27 17:21:22.884770"], ["updated_at", "2018-03-27 17:21:22.884770"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.8ms)[0m  [1m[32mINSERT INTO "users" ("password", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["password", "ladddd"], ["created_at", "2018-03-27 17:21:22.893591"], ["updated_at", "2018-03-27 17:21:22.893591"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("adress", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["adress", "Mapsrsa 2090"], ["created_at", "2018-03-27 17:21:22.906412"], ["updated_at", "2018-03-27 17:21:22.906412"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mandio"], ["created_at", "2018-03-27 17:21:22.924902"], ["updated_at", "2018-03-27 17:21:22.924902"]]
+  [1m[35m (16.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "asdassa"], ["created_at", "2018-03-27 17:21:22.945754"], ["updated_at", "2018-03-27 17:21:22.945754"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 101000], ["created_at", "2018-03-27 17:21:22.952975"], ["updated_at", "2018-03-27 17:21:22.952975"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mencillo"], ["created_at", "2018-03-27 17:21:22.960160"], ["updated_at", "2018-03-27 17:21:22.960160"]]
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "asdassssa"], ["created_at", "2018-03-27 17:21:22.970873"], ["updated_at", "2018-03-27 17:21:22.970873"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 30000], ["created_at", "2018-03-27 17:21:22.980548"], ["updated_at", "2018-03-27 17:21:22.980548"]]
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mandioma"], ["created_at", "2018-03-27 17:21:22.990543"], ["updated_at", "2018-03-27 17:21:22.990543"]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "places" ("address", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["address", "aassa"], ["created_at", "2018-03-27 17:21:22.997984"], ["updated_at", "2018-03-27 17:21:22.997984"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("capacity", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["capacity", 100020], ["created_at", "2018-03-27 17:21:23.005814"], ["updated_at", "2018-03-27 17:21:23.005814"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
